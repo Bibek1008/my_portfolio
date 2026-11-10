@@ -1,4 +1,4 @@
 import type { Metadata } from 'next';
-import { CvActions, Education, External, Section } from '../ui';
+import { CvActions, Education } from '../ui';
 export const metadata: Metadata = { title: 'Resume' };
-export default function Resume() { return <><section className="wrap track-hero"><p className="eyebrow">RESUME / CURRICULUM VITAE</p><h1>Education and<br /><em>experience.</em></h1><p className="intro">Details of my education, experience, and research interests.</p><CvActions /></section><Education /><Section id="professional-resume" label="PROFESSIONAL RESUME" title="Professional Resume"><p>Download or view my professional resume.</p><div className="actions"><a className="button primary" href="/professional-resume.pdf" download>Download Professional Resume ↓</a><External href="/professional-resume.pdf">View Professional Resume ↗</External></div></Section></>; }
+export default function Resume() { return <><section className="wrap track-hero"><p className="eyebrow">RESUME / CURRICULUM VITAE</p><h1>Education and<br /><em>experience.</em></h1><p className="intro">Details of my education, experience, and research interests.</p><CvActions /></section><Education /></>; }
