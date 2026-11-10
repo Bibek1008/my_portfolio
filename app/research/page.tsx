@@ -23,16 +23,16 @@ export default function Research() {
         <Section id="interests" label="RESEARCH INTERESTS" title="A focus on reliable intelligence.">
             <ul className="interest-list">{interests.map((interest, i) => <li key={interest}><span className="index">0{i + 1}</span>{interest}</li>)}</ul>
         </Section>
-        <Section id="experience" label="ONGOING INVESTIGATION" title="Hallucination detection & intervention.">
-            <p className="eyebrow">INDEPENDENT RESEARCH · SEPTEMBER 2026–PRESENT</p>
-            <h3>Hallucination Detection and Intervention in LLM Agents</h3>
-            <ul className="contributions research-detail">
-                <li>Investigating robustness of hallucination detection signals in multi-step LLM agents under adversarial distribution shifts.</li>
-                <li>Studying how detection reliability changes as errors propagate across reasoning steps.</li>
-                <li>Developing detection-guided intervention mechanisms to identify and mitigate hallucinations before they propagate.</li>
-                <li>Evaluating across multiple models, tasks, and distribution shifts.</li>
-            </ul>
-            <span className="badge">Ongoing research</span>
+        <Section id="experience" label="RESEARCH PAPER" title="Tool-error detection under adversarial conditions.">
+            <article className="publication">
+                <div><span className="badge">PREPRINT</span><p className="eyebrow">ARXIV:2611.11172 · 2026</p></div>
+                <div>
+                    <h3>Do Benign-Trained Hidden-State Probes Detect Tool Errors Under Adversarial Conditions?</h3>
+                    <p>Bibek Bhandari & Kshitij Lingthep <small>(equal contribution)</small></p>
+                    <p>Evaluated whether hidden-state probes trained on benign tool-use trajectories can detect incorrect tool actions under prompt-injection, system-override, and tool-poisoning conditions. Compared probe performance with token-uncertainty baselines across three models using task-grouped, held-out evaluation.</p>
+                    <External href="https://arxiv.org/pdf/2611.11172">Read paper on arXiv ↗</External>
+                </div>
+            </article>
         </Section>
         <Section id="publications" label="PUBLICATIONS & PREPRINTS" title="Research in the open.">
             <article className="publication">
