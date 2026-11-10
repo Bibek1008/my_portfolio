@@ -1,36 +1,41 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+﻿# Bibek Bhandari — Engineering & Research
 
-## Getting Started
+A dual-track portfolio built with Next.js App Router, React, TypeScript, and Tailwind CSS. The existing public/profile.jpg remains the intended profile image; the root passport photo is never imported or publicly served.
 
-First, run the development server:
+## Development
 
-```bash
+npm ci
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Validation: npm run lint, npx tsc --noEmit, npm run build.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Routes and content
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- / — introduction, profile, and choices of portfolio track
+- /industry — five engineering projects, grouped skills, internship, education, CV
+- /research — research profile, eight interests, ongoing hallucination research, preprint, five research projects, experimental methods, education, CV
+- /resume — shared CV entry point
+- /contact — professional profiles and email
 
-## Learn More
+app/data.ts contains structured project and skill content. app/ui.tsx provides shared project cards, education, safe external links, sections, and CV actions. app/navigation.tsx provides active routes and accessible mobile navigation. app/globals.css contains the shared responsive design system.
 
-To learn more about Next.js, take a look at the following resources:
+## CV handoff
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+No CV PDF was supplied with the available attachments or repository. Do not fabricate or regenerate it. Add the original, unchanged PDF at public/bibek-bhandari-cv.pdf, then rebuild. All routes automatically use that single asset for View CV and Download CV. Until then, the interface offers email contact and marks downloads unavailable. Detailed SupMentr responsibilities are intentionally omitted pending the actual CV.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Content verification
 
-## Deploy on Vercel
+On 10 November 2026, HTTP checks returned 200 for all four demo URLs and the three supplied GitHub project repositories. HTTP availability does not establish full application functionality. No unverified repository URL was added for the PR reviewer or RAG dashboard. The arXiv record was verified and its actual title and author names used; the work is labeled a preprint. Research descriptions and reported experiment figures otherwise come from the supplied brief and await CV cross-checking. Simulation results are explicitly distinguished from real GPU measurements.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+No extra runtime dependencies were added. Next.js and eslint-config-next were updated together within major version 16 to address advisories in the original dependency versions. System fonts avoid a build-time Google Fonts network dependency.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Final validation
+
+- ESLint: passed.
+- TypeScript (tsc --noEmit): passed.
+- Production build: passed; all five routes prerendered successfully.
+- Built-server HTTP checks: /, /industry, /research, /resume, /contact, /profile.jpg, and the Next.js optimized profile-image endpoint returned 200.
+- Root passport-photo URL returned 404.
+- Both portfolio routes show the shared unavailable-CV fallback until the original PDF is supplied.
+- Visual desktop/mobile browser testing was blocked by the browser automation tool's URL-confidence check; responsive CSS is implemented but visual verification remains outstanding.
+- Dependency audit after compatible updates: no critical/high findings; seven moderate findings remain in the ESLint / typescript-eslint tooling chain.
